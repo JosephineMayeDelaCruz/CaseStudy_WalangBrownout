@@ -24,9 +24,9 @@ export default function Receiving() {
       await api.addStockMovement({
         batch_id: batch.id,
         product_label: batch.product,
-        type: "receive",
+        type: "received",
         qty: batch.qty,
-        status: "completed",
+        status: "ok",
         reference: batch.code,
       });
       notify(`Received batch ${batch.code}.`, "success");

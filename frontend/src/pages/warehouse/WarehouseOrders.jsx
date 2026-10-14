@@ -33,7 +33,7 @@ export default function WarehouseOrders() {
   if (!orders) return <Loading />;
 
   const columns = [
-    { key: "code",     label: "PO #",     className: "fw-semibold py-3" },
+    { key: "id",       label: "PO #",     className: "fw-semibold py-3" },
     { key: "supplier", label: "Supplier" },
     { key: "total",    label: "Total" },
     {
@@ -49,7 +49,7 @@ export default function WarehouseOrders() {
           <button
             className="btn-outline-tan px-3 py-1"
             style={{ fontSize: ".78rem" }}
-            onClick={() => handleReceive(row.code)}
+            onClick={() => handleReceive(row.id)}
           >
             Mark received
           </button>

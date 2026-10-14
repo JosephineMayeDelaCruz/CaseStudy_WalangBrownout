@@ -178,11 +178,11 @@ export const api = {
   },
 
   async approvePurchaseOrder(code) {
-    return request(`/purchase-orders/${code}/approve`, { method: "PATCH" });
+    return request(`/purchase-orders/${encodeURIComponent(code)}/approve`, { method: "PATCH" });
   },
 
   async receivePurchaseOrder(code) {
-    return request(`/purchase-orders/${code}/receive`, { method: "PATCH" });
+    return request(`/purchase-orders/${encodeURIComponent(code)}/receive`, { method: "PATCH" });
   },
 
   // ── Purchase Requests ────────────────────────────────────────────────────
@@ -196,7 +196,7 @@ export const api = {
   },
 
   async convertPurchaseRequest(code) {
-    return request(`/purchase-requests/${code}/convert`, { method: "PATCH" });
+    return request(`/purchase-requests/${encodeURIComponent(code)}/convert`, { method: "PATCH" });
   },
 
   // ── Picking Orders ───────────────────────────────────────────────────────
@@ -211,11 +211,11 @@ export const api = {
 
   async pickOrder(code, payload = {}) {
     // payload: { override_reason?, damage_note?, batch_overrides? }
-    return request(`/picking-orders/${code}/pick`, { method: "PATCH", body: payload });
+    return request(`/picking-orders/${encodeURIComponent(code)}/pick`, { method: "PATCH", body: payload });
   },
 
   async shipOrder(code) {
-    return request(`/picking-orders/${code}/ship`, { method: "PATCH" });
+    return request(`/picking-orders/${encodeURIComponent(code)}/ship`, { method: "PATCH" });
   },
 
   // ── Dashboards ───────────────────────────────────────────────────────────

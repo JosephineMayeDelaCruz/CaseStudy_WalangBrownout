@@ -30,13 +30,13 @@ export default function WarehouseDashboard() {
 
       <div className="row g-3 mb-4">
         <div className="col-4">
-          <StatCard label="Total products" value={data.totalProducts ?? 0} />
+          <StatCard label="Low stock" value={data.lowStock ?? 0} />
         </div>
         <div className="col-4">
-          <StatCard label="Movements today" value={data.movementsToday ?? 0} />
+          <StatCard label="Expiring (30d)" value={data.expiring30 ?? 0} />
         </div>
         <div className="col-4">
-          <StatCard label="Pending orders" value={data.pendingOrders ?? 0} />
+          <StatCard label="Flagged (7d)" value={data.flagged ?? 0} />
         </div>
       </div>
 
