@@ -5,13 +5,13 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // Add your deployed Vercel frontend URL here once you have it,
-    // e.g. 'https://walang-brownout-appliances-three.vercel.app'
+    // Set FRONTEND_URL in your backend .env / Railway environment variables
+    // to your deployed frontend URL (Vercel or Railway).
+    // e.g. https://walangbrownout.vercel.app  or  https://frontend.up.railway.app
     'allowed_origins' => array_filter([
         'http://localhost:5173',
         'http://127.0.0.1:5173',
-        // Add your deployed Vercel URL in FRONTEND_URL in .env
-        env('FRONTEND_URL') !== 'http://localhost:5173' ? env('FRONTEND_URL') : null,
+        env('FRONTEND_URL'),
     ]),
 
     'allowed_origins_patterns' => [],
